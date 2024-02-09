@@ -1,7 +1,10 @@
-﻿using CASTOREMPLEADO.Entity;
+﻿using CASTOREMPLEADO.DAL.implementaciones;
+using CASTOREMPLEADO.DAL.Interfaces;
+using CASTOREMPLEADO.DBContext;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Modelos;
 
 namespace CASTOREMPLEADO.Controllers
 {
@@ -9,26 +12,24 @@ namespace CASTOREMPLEADO.Controllers
     [ApiController]
     public class CargoController : ControllerBase
     {
-        public readonly CastorContext _dbcastorContext;
-        public CargoController(CastorContext _context)
+        public readonly ICargoRepositorio _cargoRepositorio;
+        public CargoController(ICargoRepositorio cargoRepositorio)
         {
-            _dbcastorContext = _context;
+            _cargoRepositorio = cargoRepositorio;
         }
 
         [HttpGet]
         [Route("lista")]
         public IActionResult lista()
-        {
-            List<Cargo> lista = new List<Cargo>();
+        { 
             try
             {
-                lista = _dbcastorContext.Cargos.ToList();
-                return StatusCode(StatusCodes.Status200OK, new { mensaje = "ok", response = lista });
-
+                var lista = _cargoRepositorio.ObtenerTodos();
+                return Ok(new { mensaje = "ok", response = lista });
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status200OK, new { mensaje = "err", response = ex });
+                return StatusCode(StatusCodes.Status500InternalServerError, new { mensaje = "err", response = ex.Message });
             }
         }
     }

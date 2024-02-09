@@ -1,4 +1,7 @@
-using CASTOREMPLEADO.Entity;
+
+using CASTOREMPLEADO.DAL.implementaciones;
+using CASTOREMPLEADO.DAL.Interfaces;
+using CASTOREMPLEADO.DBContext;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 
@@ -24,7 +27,9 @@ builder.Services.AddCors(opt =>
     opt.AddPolicy(name: misReglasCors, builder => { builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod(); 
     });
 });
-
+builder.Services.AddScoped<IEmpleadoRepositorio, EmpleadoRepositorioImpl>();
+builder.Services.AddScoped<ICargoRepositorio, CargoRepositorioImpl>();
+ 
 
 
 var app = builder.Build();

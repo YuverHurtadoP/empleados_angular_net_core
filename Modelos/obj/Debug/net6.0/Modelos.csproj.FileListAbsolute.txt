@@ -1,0 +1,12 @@
+E:\c#\castor\CASTOREMPLEADO\Modelos\bin\Debug\net6.0\Modelos.deps.json
+E:\c#\castor\CASTOREMPLEADO\Modelos\bin\Debug\net6.0\Modelos.dll
+E:\c#\castor\CASTOREMPLEADO\Modelos\bin\Debug\net6.0\Modelos.pdb
+E:\c#\castor\CASTOREMPLEADO\Modelos\obj\Debug\net6.0\Modelos.csproj.AssemblyReference.cache
+E:\c#\castor\CASTOREMPLEADO\Modelos\obj\Debug\net6.0\Modelos.GeneratedMSBuildEditorConfig.editorconfig
+E:\c#\castor\CASTOREMPLEADO\Modelos\obj\Debug\net6.0\Modelos.AssemblyInfoInputs.cache
+E:\c#\castor\CASTOREMPLEADO\Modelos\obj\Debug\net6.0\Modelos.AssemblyInfo.cs
+E:\c#\castor\CASTOREMPLEADO\Modelos\obj\Debug\net6.0\Modelos.csproj.CoreCompileInputs.cache
+E:\c#\castor\CASTOREMPLEADO\Modelos\obj\Debug\net6.0\Modelos.dll
+E:\c#\castor\CASTOREMPLEADO\Modelos\obj\Debug\net6.0\refint\Modelos.dll
+E:\c#\castor\CASTOREMPLEADO\Modelos\obj\Debug\net6.0\Modelos.pdb
+E:\c#\castor\CASTOREMPLEADO\Modelos\obj\Debug\net6.0\ref\Modelos.dll

@@ -4,6 +4,71 @@
     "E:\\c#\\castor\\CASTOREMPLEADO\\CASTOREMPLEADO\\CASTOREMPLEADO.csproj": {}
   },
   "projects": {
+    "E:\\c#\\castor\\CASTOREMPLEADO\\CASTOREMPLEADO.DAL\\CASTOREMPLEADO.DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\c#\\castor\\CASTOREMPLEADO\\CASTOREMPLEADO.DAL\\CASTOREMPLEADO.DAL.csproj",
+        "projectName": "CASTOREMPLEADO.DAL",
+        "projectPath": "E:\\c#\\castor\\CASTOREMPLEADO\\CASTOREMPLEADO.DAL\\CASTOREMPLEADO.DAL.csproj",
+        "packagesPath": "C:\\Users\\yuver\\.nuget\\packages\\",
+        "outputPath": "E:\\c#\\castor\\CASTOREMPLEADO\\CASTOREMPLEADO.DAL\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\yuver\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "E:\\c#\\castor\\CASTOREMPLEADO\\Modelos\\Modelos.csproj": {
+                "projectPath": "E:\\c#\\castor\\CASTOREMPLEADO\\Modelos\\Modelos.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.15, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "E:\\c#\\castor\\CASTOREMPLEADO\\CASTOREMPLEADO\\CASTOREMPLEADO.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -28,7 +93,14 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "E:\\c#\\castor\\CASTOREMPLEADO\\CASTOREMPLEADO.DAL\\CASTOREMPLEADO.DAL.csproj": {
+                "projectPath": "E:\\c#\\castor\\CASTOREMPLEADO\\CASTOREMPLEADO.DAL\\CASTOREMPLEADO.DAL.csproj"
+              },
+              "E:\\c#\\castor\\CASTOREMPLEADO\\Modelos\\Modelos.csproj": {
+                "projectPath": "E:\\c#\\castor\\CASTOREMPLEADO\\Modelos\\Modelos.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -81,6 +153,71 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\c#\\castor\\CASTOREMPLEADO\\Modelos\\Modelos.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\c#\\castor\\CASTOREMPLEADO\\Modelos\\Modelos.csproj",
+        "projectName": "Modelos",
+        "projectPath": "E:\\c#\\castor\\CASTOREMPLEADO\\Modelos\\Modelos.csproj",
+        "packagesPath": "C:\\Users\\yuver\\.nuget\\packages\\",
+        "outputPath": "E:\\c#\\castor\\CASTOREMPLEADO\\Modelos\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\yuver\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.15, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

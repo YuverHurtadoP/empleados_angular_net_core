@@ -510,6 +510,34 @@
         "build": {
           "buildTransitive/net6.0/System.Text.Json.targets": {}
         }
+      },
+      "CASTOREMPLEADO.DAL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "7.0.15",
+          "Modelos": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CASTOREMPLEADO.DAL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CASTOREMPLEADO.DAL.dll": {}
+        }
+      },
+      "Modelos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "7.0.15",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "7.0.11"
+        },
+        "compile": {
+          "bin/placeholder/Modelos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Modelos.dll": {}
+        }
       }
     }
   },
@@ -1491,13 +1519,25 @@
         "system.text.json.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "CASTOREMPLEADO.DAL/1.0.0": {
+      "type": "project",
+      "path": "../CASTOREMPLEADO.DAL/CASTOREMPLEADO.DAL.csproj",
+      "msbuildProject": "../CASTOREMPLEADO.DAL/CASTOREMPLEADO.DAL.csproj"
+    },
+    "Modelos/1.0.0": {
+      "type": "project",
+      "path": "../Modelos/Modelos.csproj",
+      "msbuildProject": "../Modelos/Modelos.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "CASTOREMPLEADO.DAL >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.15",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.15",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.15",
+      "Modelos >= 1.0.0",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 7.0.11",
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
@@ -1529,7 +1569,14 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\c#\\castor\\CASTOREMPLEADO\\CASTOREMPLEADO.DAL\\CASTOREMPLEADO.DAL.csproj": {
+              "projectPath": "E:\\c#\\castor\\CASTOREMPLEADO\\CASTOREMPLEADO.DAL\\CASTOREMPLEADO.DAL.csproj"
+            },
+            "E:\\c#\\castor\\CASTOREMPLEADO\\Modelos\\Modelos.csproj": {
+              "projectPath": "E:\\c#\\castor\\CASTOREMPLEADO\\Modelos\\Modelos.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

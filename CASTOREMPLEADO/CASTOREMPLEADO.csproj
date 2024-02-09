@@ -21,8 +21,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\" />
     <Folder Include="Imgs\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CASTOREMPLEADO.DAL\CASTOREMPLEADO.DAL.csproj" />
+    <ProjectReference Include="..\Modelos\Modelos.csproj" />
   </ItemGroup>
 
 </Project>
