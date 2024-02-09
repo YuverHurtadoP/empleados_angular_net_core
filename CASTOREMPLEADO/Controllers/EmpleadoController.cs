@@ -12,7 +12,7 @@ using System.Linq;
 
 namespace CASTOREMPLEADO.Controllers
 {
-    [EnableCors("ReglasCors")]
+    [EnableCors("misReglasCors")]
     [Route("api/[controller]")]
     [ApiController]
     public class EmpleadoController : ControllerBase
@@ -64,20 +64,24 @@ namespace CASTOREMPLEADO.Controllers
         [Route("guardar")]
         public IActionResult guardarEmpleado([FromBody] Empleado empleado)
         {
-            Empleado empleadoExistente = _dbcastorContext.Empleados.Where(e => e.Cedula == empleado.Cedula).FirstOrDefault();
+            Empleado empleadoExistente = _dbcastorContext.Empleados
+                .Where(e => e.Cedula == empleado.Cedula)
+                .FirstOrDefault();
 
             if (empleadoExistente != null)
             {
-                return BadRequest("Empleado ya existe en la base de datos");
+                return BadRequest(new { mensaje = "Empleado ya existe en la base de datos" });
             }
+
             try
             {
                 _dbcastorContext.Empleados.Add(empleado);
                 _dbcastorContext.SaveChanges();
                 return StatusCode(StatusCodes.Status200OK, new { mensaje = "ok" });
             }
-            catch (Exception ex) {
-                return StatusCode(StatusCodes.Status200OK, new { mensaje = "err", response = ex });
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new { mensaje = "Error interno del servidor", response = ex.Message });
             }
         }
 
@@ -86,24 +90,31 @@ namespace CASTOREMPLEADO.Controllers
         [Route("actualizar")]
         public IActionResult actualizarEmpleado([FromBody] Empleado empleado)
         {
-
-            Empleado empleadoExistente = _dbcastorContext.Empleados.Where(e => e.Cedula == empleado.Cedula).FirstOrDefault();
-
-            if (empleadoExistente == null)
-            {
-                return BadRequest("Empleado no encontrado");
-            }
             try
             {
+                // Buscar el empleado existente sin rastrearlo
+                var empleadoExistente = _dbcastorContext.Empleados.AsNoTracking().FirstOrDefault(e => e.Id == empleado.Id);
+
+                if (empleadoExistente == null)
+                {
+                    return BadRequest(new { mensaje = "Empleado no existe en la base de datos" });
+                }
+
+                // Desvincular la entidad rastreada actual del contexto
+                _dbcastorContext.Entry(empleadoExistente).State = EntityState.Detached;
+
+                // Actualizar el empleado
                 _dbcastorContext.Empleados.Update(empleado);
                 _dbcastorContext.SaveChanges();
+
                 return StatusCode(StatusCodes.Status200OK, new { mensaje = "ok" });
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status200OK, new { mensaje = "err", response = ex });
+                return StatusCode(StatusCodes.Status500InternalServerError, new { mensaje = "Error interno del servidor", response = ex.Message });
             }
         }
+
 
         [HttpDelete]
         [Route("eliminar/{id}")]

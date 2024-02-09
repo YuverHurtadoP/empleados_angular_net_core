@@ -17,11 +17,12 @@ builder.Services.AddControllers().AddJsonOptions(
     );
 
 
-var misReglasCors = "ReglasCors";
+var misReglasCors = "misReglasCors";
 
 builder.Services.AddCors(opt =>
 {
-    opt.AddPolicy(name: misReglasCors, builder => { builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod(); });
+    opt.AddPolicy(name: misReglasCors, builder => { builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod(); 
+    });
 });
 
 
