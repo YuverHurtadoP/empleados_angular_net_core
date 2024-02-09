@@ -1,0 +1,37 @@
+
+CREATE DATABASE castor
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'Spanish_Colombia.1252'
+    LC_CTYPE = 'Spanish_Colombia.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+
+
+
+CREATE TABLE IF NOT EXISTS public.cargo (
+    id SERIAL PRIMARY KEY,  -- SERIAL ya implica una clave primaria
+    nombre VARCHAR(50) COLLATE pg_catalog."default"
+);
+
+ALTER TABLE public.cargo
+    OWNER TO postgres;
+
+
+CREATE TABLE IF NOT EXISTS public.empleados (
+    id SERIAL PRIMARY KEY,  -- Utilizando SERIAL para la columna ID
+    cedula INTEGER NOT NULL,
+    nombre VARCHAR(255) NOT NULL,
+    foto VARCHAR(1000) NOT NULL,
+    fecha_ingreso DATE NOT NULL,
+    cargo_id INTEGER NOT NULL,
+    CONSTRAINT fk_cargo
+        FOREIGN KEY (cargo_id)
+        REFERENCES public.cargo (id)
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+);
+
+ALTER TABLE public.empleados
+    OWNER TO postgres;
