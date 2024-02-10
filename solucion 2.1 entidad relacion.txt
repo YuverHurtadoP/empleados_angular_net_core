@@ -1,0 +1,22 @@
+- Tabla: Solicitantes
+  - Campos:
+    - NroSolicitante (Clave primaria)
+    - NombreSolicitante
+
+- Tabla: Solicitudes
+  - Campos:
+    - NroSolicitud (Clave primaria)
+    - FechaSolicitud
+    - NroEstadoSolicitud (Clave foránea que referencia a la tabla EstadosSolicitud)
+    - NroServicio (Clave foránea que referencia a la tabla Servicios)
+    - NroSolicitante (Clave foránea que referencia a la tabla Solicitantes)
+
+- Tabla: EstadosSolicitud
+  - Campos:
+    - NroEstadoSolicitud (Clave primaria)
+    - NombreEstadoSolicitud
+
+- Tabla: Servicios
+  - Campos:
+    - NroServicio (Clave primaria)
+    - NombreServicio

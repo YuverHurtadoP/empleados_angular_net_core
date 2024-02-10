@@ -1,0 +1,15 @@
+SELECT
+    S.NroSolicitud,
+    SS.NombreSolicitante,
+    S.NroEstadoSolicitud,
+    ES.NombreEstadoSolicitud AS NombreEstadoSolicitud,
+    S.NroServicio,
+    SE.NombreServicio AS NombreServicio
+FROM
+    Solicitudes AS S
+JOIN
+    Solicitantes AS SS ON S.NroSolicitante = SS.NroSolicitante
+JOIN
+    EstadosSolicitud AS ES ON S.NroEstadoSolicitud = ES.NroEstadoSolicitud
+JOIN
+    Servicios AS SE ON S.NroServicio = SE.NroServicio;
